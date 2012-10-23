@@ -166,8 +166,12 @@ public class LauncherActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.launcher_ui_btn_start:
 			// show the readings activity
-			mIntent = new Intent(this, org.magdaaproject.winston.ReadingsActivity.class);
-			startActivity(mIntent);
+//			mIntent = new Intent(this, org.magdaaproject.winston.ReadingsActivity.class);
+//			startActivity(mIntent);
+			// debug code
+			// start the service for debugging
+			mIntent = new Intent(this, org.magdaaproject.winston.services.CoreService.class);
+			startService(mIntent);
 			break;
 		case R.id.launcher_ui_btn_contact:
 			// show the contact information stuff

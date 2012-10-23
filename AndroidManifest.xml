@@ -27,6 +27,17 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="15" />
+    
+    <!-- uses features -->
+    <uses-feature android:required="true" android:name="android.hardware.wifi"/>
+    
+    <!-- uses permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/> <!-- access IOIO -->
+    <uses-permission android:name="android.permission.INTERNET"/> <!-- access IOIO -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> <!-- write files on external storage -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/> <!-- derive the device id -->
+    
+    <uses-permission android:name="org.servalproject.rhizome.ADD_FILE"/> <!-- add files to the Rhizome store for sharing -->
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -44,6 +55,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- services -->
+        <service 
+            android:exported="false" 
+            android:name=".services.CoreService" 
+            android:enabled="true"/>
+        
     </application>
 
 </manifest>
